@@ -24,6 +24,7 @@ State LocalSearch::search(const State& initial_state, bool verbose, int interval
         }
 
         state = get_next_state();
+        state.sync();
         history.push_back(state.get_score());
         if(state.get_score() > best_state.get_score()) {
             if(verbose) {

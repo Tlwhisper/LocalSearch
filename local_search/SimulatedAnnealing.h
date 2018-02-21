@@ -11,4 +11,6 @@ public:
 
     SimulatedAnnealing(double temp, int lambda);
 
+    void get_next_state();
+
 };
