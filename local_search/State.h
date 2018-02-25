@@ -3,14 +3,22 @@
 
 #include <list>
 #include <memory>
+#include <iostream>
 
 using namespace std;
 
 class State {
 
-private:
+protected:
+//    shared_ptr<State> child;
+
+    bool synced;
 
 public:
+
+    State();
+
+    State(const State& state) : State() {}
 
     virtual list<shared_ptr<State>> generate_children() { return list<shared_ptr<State>>(); };
 
@@ -21,6 +29,10 @@ public:
     // Sets this state as a current one in the local search
     virtual void sync() = 0;
 
+//    class Modifier {
+//
+//        virtual bool modify(State* state) = 0;
+//    };
 };
 
 #endif

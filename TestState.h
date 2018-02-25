@@ -12,12 +12,14 @@ class TestState : public State {
 
 private:
 
-    int value = 0;
-
-    bool increase();
     bool decrease();
 
+protected:
+    bool increase();
+
 public:
+
+    int value = 0;
 
     TestState();
 
@@ -29,6 +31,7 @@ public:
 
     void sync();
 
+    State* clone();
 };
 
 

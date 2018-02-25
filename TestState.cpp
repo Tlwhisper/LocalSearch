@@ -11,12 +11,30 @@ TestState::TestState() = default;
 list<shared_ptr<State>> TestState::generate_children() {
     list<shared_ptr<State>> children;
 
+//    class Modifier : State::Modifier {
+//
+//        bool modify(State* state) {
+//            return ((TestState*) state)->increase();
+//        }
+//
+//    } modifier;
+
     shared_ptr<TestState> child = make_shared<TestState>(*this);
-    child->increase();
-
-    children.push_back(child);
-
+    if(child->increase()) {
+        children.push_back(child);
+        child = make_shared<TestState>(*this);
+    }
+    if(child->decrease()) {
+        children.push_back(child);
+        child = make_shared<TestState>(*this);
+    }
     return children;
+}
+
+State* TestState::clone() {
+    TestState* clone = new TestState;
+    *clone = *this;
+
 }
 
 shared_ptr<State> TestState::generate_random_child() {
@@ -40,4 +58,5 @@ bool TestState::increase() {
 
 bool TestState::decrease() {
     --value;
+    return true;
 }

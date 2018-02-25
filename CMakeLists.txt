@@ -10,6 +10,7 @@ set(SOURCE_FILES
         local_search/LocalSearch.h
         local_search/SimulatedAnnealing.cpp
         local_search/SimulatedAnnealing.h
+        local_search/State.cpp
         local_search/State.h
         TestState.cpp
         TestState.h
