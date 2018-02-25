@@ -5,16 +5,16 @@ LocalSearch::LocalSearch(int n_iterations) {
     this->n_iterations = n_iterations;
 }
 
-shared_ptr<State> LocalSearch::search(State& initial_state) {
+shared_ptr<State> LocalSearch::search(State* initial_state) {
     return search(initial_state, false, 0);
 }
 
-shared_ptr<State> LocalSearch::search(State& initial_state, bool verbose, int interval) {
-    state = shared_ptr<State>(&initial_state);
-    best_state = shared_ptr<State>(&initial_state);
-    history.push_back(initial_state.get_score());
+shared_ptr<State> LocalSearch::search(State* initial_state, bool verbose, int interval) {
+    state = shared_ptr<State>(initial_state);
+    best_state = shared_ptr<State>(state);
+    history.push_back(initial_state->get_score());
     if(verbose) {
-        cout << "Initial state with score: " << initial_state.get_score();
+        cout << "Initial state with score: " << initial_state->get_score();
     }
 
     bool stopped = false;
@@ -25,7 +25,8 @@ shared_ptr<State> LocalSearch::search(State& initial_state, bool verbose, int in
         }
 
         shared_ptr<State> next_state = get_next_state();
-        if(next_state == NULL) {
+
+        if(next_state == nullptr) {
             break;
         }
 
@@ -51,7 +52,7 @@ shared_ptr<State> LocalSearch::search(State& initial_state, bool verbose, int in
         }
     }
 
-    return state;
+    return best_state;
 }
 
 list<double> LocalSearch::get_history() {

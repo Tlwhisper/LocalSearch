@@ -1,5 +1,8 @@
+#ifndef LOCAL_SEARCH_STATE_H
+#define LOCAL_SEARCH_STATE_H
+
 #include <list>
-#include "Operator.h"
+#include <memory>
 
 using namespace std;
 
@@ -7,15 +10,11 @@ class State {
 
 private:
 
-    list<Operator> operators;
-
 public:
 
-    State();
+    virtual list<shared_ptr<State>> generate_children() { return list<shared_ptr<State>>(); };
 
-    list<State> generate_children();
-
-    list<State> generate_random_child();
+    virtual shared_ptr<State> generate_random_child() { return nullptr; };
 
     virtual double get_score() const = 0;
 
@@ -23,3 +22,5 @@ public:
     virtual void sync() = 0;
 
 };
+
+#endif

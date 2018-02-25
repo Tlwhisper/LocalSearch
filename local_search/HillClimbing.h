@@ -1,3 +1,6 @@
+#ifndef LOCAL_SEARCH_HILL_CLIMBING_H
+#define LOCAL_SEARCH_HILL_CLIMBING_H
+
 #include "LocalSearch.h"
 
 class HillClimbing : public LocalSearch {
@@ -6,8 +9,10 @@ private:
 
 public:
 
-    HillClimbing();
+    HillClimbing(int n_iterations);
 
-    void get_next_state();
+    shared_ptr<State> get_next_state();
 
 };
+
+#endif

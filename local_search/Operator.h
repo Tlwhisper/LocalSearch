@@ -1,9 +1,0 @@
-
-
-class Operator {
-
-private:
-
-public:
-
-};

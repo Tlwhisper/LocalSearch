@@ -1,10 +1,10 @@
 #include "SimulatedAnnealing.h"
 
-SimulatedAnnealing::SimulatedAnnealing(double temp, double lambda) {
+SimulatedAnnealing::SimulatedAnnealing(int n_iterations, double temp, double lambda) : LocalSearch(n_iterations) {
     this->temp = temp;
     this->lambda = lambda;
 }
 
-SimulatedAnnealing::get_next_state() {
+shared_ptr<State> SimulatedAnnealing::get_next_state() {
     
 }

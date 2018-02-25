@@ -1,3 +1,6 @@
+#ifndef LOCAL_SEARCH_SIMULATE_ANNEALING_H
+#define LOCAL_SEARCH_SIMULATE_ANNEALING_H
+
 #include "LocalSearch.h"
 
 class SimulatedAnnealing : public LocalSearch {
@@ -9,8 +12,10 @@ private:
 
 public:
 
-    SimulatedAnnealing(double temp, int lambda);
+    SimulatedAnnealing(int n_iterations, double temp, double lambda);
 
-    void get_next_state();
+    shared_ptr<State> get_next_state();
 
 };
+
+#endif
