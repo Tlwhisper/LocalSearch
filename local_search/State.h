@@ -10,13 +10,13 @@ using namespace std;
 class State {
 
 protected:
-//    shared_ptr<State> child;
-
     bool synced;
 
 public:
 
-    State();
+    State() {
+        synced = false;
+    }
 
     State(const State& state) : State() {}
 
@@ -27,12 +27,7 @@ public:
     virtual double get_score() const = 0;
 
     // Sets this state as a current one in the local search
-    virtual void sync() = 0;
-
-//    class Modifier {
-//
-//        virtual bool modify(State* state) = 0;
-//    };
+    virtual void sync() {};
 };
 
 #endif

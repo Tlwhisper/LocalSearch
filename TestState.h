@@ -1,7 +1,3 @@
-//
-// Created by Gonzalo Solera on 25/02/2018.
-//
-
 #ifndef LOCAL_SEARCH_PIZZA_STATE_H
 #define LOCAL_SEARCH_PIZZA_STATE_H
 
@@ -28,11 +24,6 @@ public:
     shared_ptr<State> generate_random_child();
 
     double get_score() const;
-
-    void sync();
-
-    State* clone();
 };
-
 
 #endif
