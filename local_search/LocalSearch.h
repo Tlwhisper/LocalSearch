@@ -24,7 +24,7 @@ public:
 
     list<double> get_history();
 
-    void plot_history();
+    void print_history();
 
     virtual shared_ptr<State> get_next_state() = 0;
 

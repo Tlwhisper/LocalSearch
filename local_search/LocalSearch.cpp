@@ -62,6 +62,8 @@ list<double> LocalSearch::get_history() {
     return history;
 }
 
-void LocalSearch::plot_history() {
-
+void LocalSearch::print_history() {
+    for(double score : history) {
+        cout << score << endl;
+    }
 }

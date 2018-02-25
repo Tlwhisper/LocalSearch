@@ -11,7 +11,8 @@ int main() {
 
     TestState* initial_state = new TestState();
 
-    shared_ptr<TestState> result = std::static_pointer_cast<TestState>(local_search.search(initial_state, true));
+    shared_ptr<TestState> result = std::static_pointer_cast<TestState>(local_search.search(initial_state, false));
+    local_search.print_history();
 
     cout << result->value << endl;
 
