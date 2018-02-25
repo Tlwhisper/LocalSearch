@@ -20,9 +20,7 @@ public:
 
     LocalSearch(int n_iterations);
 
-    shared_ptr<State> search(State* initial_state);
-
-    shared_ptr<State> search(State* initial_state, bool verbose, int interval);
+    shared_ptr<State> search(State* initial_state, bool verbose);
 
     list<double> get_history();
 

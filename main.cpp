@@ -1,6 +1,6 @@
 #include <iostream>
 #include "local_search/SimulatedAnnealing.h"
-#include "PizzaState.h"
+#include "TestState.h"
 #include "local_search/HillClimbing.h"
 
 using namespace std;
@@ -9,8 +9,8 @@ int main() {
 
     HillClimbing local_search(1000);
 
-    PizzaState* initial_state = new PizzaState();
+    TestState* initial_state = new TestState();
 
-    local_search.search(initial_state);
+    local_search.search(initial_state, true);
 
 }

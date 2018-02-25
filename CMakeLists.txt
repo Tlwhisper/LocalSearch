@@ -11,8 +11,8 @@ set(SOURCE_FILES
         local_search/SimulatedAnnealing.cpp
         local_search/SimulatedAnnealing.h
         local_search/State.h
-        PizzaState.cpp
-        PizzaState.h
+        TestState.cpp
+        TestState.h
         main.cpp)
 
 add_executable(GoogleHashCode ${SOURCE_FILES})

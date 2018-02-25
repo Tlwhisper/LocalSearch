@@ -8,13 +8,18 @@
 
 #include "local_search/State.h"
 
-class PizzaState : public State {
+class TestState : public State {
 
 private:
 
+    int value = 0;
+
+    bool increase();
+    bool decrease();
+
 public:
 
-    PizzaState();
+    TestState();
 
     list<shared_ptr<State>> generate_children();
 
