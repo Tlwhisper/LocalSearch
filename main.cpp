@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int num_args, char* args[]) {
 
-    if(num_args != 3) {
+    if(num_args != 2) {
         cout << "usage: ./main input_file.in" << endl;
 //        exit(1);
     }
@@ -16,13 +16,13 @@ int main(int num_args, char* args[]) {
     ifstream input;
     input.open(args[1]);
 
-    HillClimbing local_search(1000);
+    SimulatedAnnealing local_search(1000, 100, 10, 0.1);
 
     TestState* initial_state = new TestState(input);
 
     shared_ptr<TestState> result = std::static_pointer_cast<TestState>(local_search.search(initial_state, false));
-    local_search.print_history();
+//    local_search.print_history();
 
-    cout << result->value << endl;
+//    cout << result->value << endl;
 
 }
