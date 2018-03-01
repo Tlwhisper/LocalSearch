@@ -5,6 +5,10 @@ SimulatedAnnealing::SimulatedAnnealing(int n_iterations, double temp, double lam
     this->lambda = lambda;
 }
 
+SimulatedAnnealing::SimulatedAnnealing(int n_iterations, double temp, double lambda, unsigned int seed) : SimulatedAnnealing(n_iterations, temp, lambda) {
+    generator.seed(seed);
+}
+
 shared_ptr<State> SimulatedAnnealing::get_next_state() {
     
 }

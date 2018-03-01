@@ -1,7 +1,10 @@
 #include "TestState.h"
 using namespace std;
 
-TestState::TestState() = default;
+TestState::TestState(ifstream& input) {
+
+}
+
 
 list<shared_ptr<State>> TestState::generate_children() {
     list<shared_ptr<State>> children;

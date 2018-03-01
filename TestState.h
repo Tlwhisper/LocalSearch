@@ -1,8 +1,8 @@
 #ifndef LOCAL_SEARCH_PIZZA_STATE_H
 #define LOCAL_SEARCH_PIZZA_STATE_H
 
-
 #include "local_search/State.h"
+#include <fstream>
 
 class TestState : public State {
 
@@ -17,7 +17,7 @@ public:
 
     int value = 0;
 
-    TestState();
+    TestState(ifstream& input);
 
     list<shared_ptr<State>> generate_children();
 
