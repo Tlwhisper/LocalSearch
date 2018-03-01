@@ -27,8 +27,12 @@ shared_ptr<State> LocalSearch::search(State* initial_state, bool verbose) {
             break;
         }
 
+        bool needs_sync = next_state == state;
+
         state = next_state;
-        state->sync();
+        if(needs_sync) {
+            state->sync();
+        }
         history.push_back(state->get_score());
 
         if(state->get_score() > best_state->get_score()) {
