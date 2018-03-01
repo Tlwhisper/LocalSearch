@@ -26,7 +26,7 @@ public:
 
     void print_history();
 
-    virtual shared_ptr<State> get_next_state() = 0;
+    virtual shared_ptr<State> get_next_state(int iteration) = 0;
 
 };
 

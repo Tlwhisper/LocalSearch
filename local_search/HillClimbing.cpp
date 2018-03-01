@@ -4,7 +4,7 @@ HillClimbing::HillClimbing(int n_iterations) : LocalSearch(n_iterations) {
 
 }
 
-shared_ptr<State> HillClimbing::get_next_state() {
+shared_ptr<State> HillClimbing::get_next_state(int iteration) {
     shared_ptr<State> max = state;
 
     for(const shared_ptr<State>& child : state->generate_children()) {

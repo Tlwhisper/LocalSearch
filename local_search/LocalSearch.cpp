@@ -21,7 +21,7 @@ shared_ptr<State> LocalSearch::search(State* initial_state, bool verbose) {
             cout << "Iteration: " << total_iterations << endl;
         }
 
-        shared_ptr<State> next_state = get_next_state();
+        shared_ptr<State> next_state = get_next_state(i);
 
         if(next_state == nullptr) {
             break;

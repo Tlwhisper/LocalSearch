@@ -11,7 +11,7 @@ public:
 
     HillClimbing(int n_iterations);
 
-    shared_ptr<State> get_next_state();
+    shared_ptr<State> get_next_state(int iteration);
 
 };
 
