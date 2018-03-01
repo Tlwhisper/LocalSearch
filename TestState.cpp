@@ -22,7 +22,7 @@ list<shared_ptr<State>> TestState::generate_children() {
 }
 
 shared_ptr<State> TestState::generate_random_child() {
-    return generate_children().front();
+    return generate_children().back();
 }
 
 double TestState::get_score() const {

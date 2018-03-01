@@ -9,7 +9,7 @@ class SimulatedAnnealing : public LocalSearch {
 private:
 
     int limit;
-    double temp;
+    double k;
     double lambda;
 
     default_random_engine generator;
@@ -19,9 +19,9 @@ private:
 
 public:
 
-    SimulatedAnnealing(int n_iterations, int steps, double temp, double lambda);
+    SimulatedAnnealing(int n_iterations, int steps, int k, double lambda);
 
-    SimulatedAnnealing(int n_iterations, int steps, double temp, double lambda, unsigned int seed);
+    SimulatedAnnealing(int n_iterations, int steps, int k, double lambda, unsigned int seed);
 
     shared_ptr<State> get_next_state(int iteration);
 

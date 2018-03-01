@@ -9,14 +9,14 @@ using namespace std;
 int main(int num_args, char* args[]) {
 
     if(num_args != 2) {
-        cout << "usage: ./main input_file.in" << endl;
+//        cout << "usage: ./main input_file.in" << endl;
 //        exit(1);
     }
 
     ifstream input;
     input.open(args[1]);
 
-    SimulatedAnnealing local_search(1000, 100, 10, 0.1);
+    SimulatedAnnealing local_search(10000, 10, 1000, 0.1);
 
     TestState* initial_state = new TestState(input);
 
